@@ -1,12 +1,14 @@
 <h2>show</h2>
-<h4><%= @task.title %></h4>
-<p><%= @task.details %></p>
-<% if @task.completed %>
-  <%= "Tarea realizada!" %>
+<h4><% if @task.completed %>
+  <i class="fas fa-check-square"></i>
 <% else %>
-  <%= 'Tarea por realizar...' %>
+  <i class="fas fa-square"></i>
 <% end %>
+<%= @task.title %></h4>
+<p><%= @task.details %></p>
 <br>
+<h4><%= link_to "Editar tarea", edit_task_path(@task.id) %></h4>
+<h4><%= link_to "Borrar tarea", delete_task_path(@task.id), method: :delete %></h4>
 <p>
   <%= link_to "Go back", tasks_path %>
 </p>
