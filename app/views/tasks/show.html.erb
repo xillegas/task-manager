@@ -1,0 +1,12 @@
+<h2>show</h2>
+<h4><%= @task.title %></h4>
+<p><%= @task.details %></p>
+<% if @task.completed %>
+  <%= "Tarea realizada!" %>
+<% else %>
+  <%= 'Tarea por realizar...' %>
+<% end %>
+<br>
+<p>
+  <%= link_to "Go back", tasks_path %>
+</p>
